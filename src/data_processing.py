@@ -1,12 +1,18 @@
 # Needs uvicorn and fastapi are installs needed pymongo
 class Processing:
-	Totals = {}
-	frequency = {}
 
 #Generate tuple associating each observation with score:
 	def cleanup(data):
+		Totals = {}
+		frequency = {}
 		Max = 0
 		Max_food = ""
+		score = 1 #placeholder
+		#Michael 3 days food
+		#Foodid->observation
+		#score = intensity
+
+	#
 		for observation in data:
 	#line below assumes I figured out how to tie observation to scores
     		if score<7:
@@ -24,6 +30,6 @@ class Processing:
 		return(Max_food)
 
 algostart = Processing()
-algostart.cleanup(data=)
+algostart.cleanup(data=[])
 #
 
