@@ -1,0 +1,102 @@
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+}
+
+p {
+    font-weight: 400;
+    margin: 0;
+    color: #999;
+    font-size: 13px;
+}
+
+/* Text Field Styles */
+input {
+    background-color: #F4F4F4;
+    width: calc(100% - 104px);
+    height: 16px;
+    margin: 0 32px;
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-weight: 900
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    color: #2F2E41;
+    background-color: #2F2E41;
+    border-color: #2F2E41;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.input-field {
+    margin-top: 20px;
+}
+
+.primary-button {
+    background-color: #2F2E41;
+    color: #fff;
+    border-radius: 10px;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 24px;
+    border: none;
+}
+
+/* Generic anchor tag styles */
+a {
+    color: #2F2E41;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.anchor-bottom {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+}
+
+.unset-content-align {
+    display: unset;
+    vertical-align: super;
+}
+
+.card-container {
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.small {
+    height: 250px;
+    width: 173px;
+}
+
+.large {
+    height: 200px;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+}
+
+.light {
+    background-color: #A3A0CA;    
+}
+
+.small img {
+    width: 100%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
