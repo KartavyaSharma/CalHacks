@@ -8,6 +8,8 @@ import food from '../Assets/Images/food.png';
 
 import PrimaryButton from '../Components/PrimaryButton';
 
+import Footer from "../Components/navbar/Footer";
+
 function Home() {
     return (
         <div id='home'>
@@ -46,6 +48,10 @@ function Home() {
             </div>
 
             <PrimaryButton text="Scan Item" action="scan-item" modifier='light' />
+
+            <Footer>
+
+            </Footer>
         </div>
     );
 }
