@@ -35,7 +35,7 @@ function CreateAccount() {
 
             {/* Already have an account? */}
             <div className='anchor-bottom'>
-                <p>Already have an account? <a href=''>Sign In</a></p>
+                <p>Already have an account? <a href='/'>Sign In</a></p>
             </div>
         </div>
     );

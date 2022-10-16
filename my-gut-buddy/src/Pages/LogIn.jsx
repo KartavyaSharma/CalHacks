@@ -32,7 +32,7 @@ function LogIn() {
 
             {/* Already have an account? */}
             <div className='anchor-bottom'>
-                <p>New User? <a href='create-account'>Create an Account</a></p>
+                <p>New User? <a href='createaccount'>Create an Account</a></p>
             </div>
         </div>
     );
