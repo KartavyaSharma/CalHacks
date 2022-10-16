@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <img src="../../../../cubstart_final/caloriecounter.png" alt="my pic" style= "width: 1200px; height: 300px;margin-bottom:5px">
+    <style>
+            button {
+              display: inline-block;
+              background-color: #69a2ec;
+              border-radius: 20px;
+              border: 12px;
+              color: #fff;
+              text-align: center;
+              font-size: 20px;
+              padding: 10px;
+              width: 200px;
+              -webkit-transition: all 0.5s;
+              -moz-transition: all 0.5s;
+              -o-transition: all 0.5s;
+              transition: all 0.5s;
+              cursor: pointer;
+              margin: 5px;
+            }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="card">
+        <label class="custom-file-upload">
+            <input type="file" id="img-upload" accept="image/*" title=" "/>
+            Upload Image
+        </label>
+        <div class="container">
+            <img id="img" alt="" />
+            <canvas id="mesh"></canvas>
+        </div> -->
+    <div id="caption">CalorieCounter tracks your daily caloric intake!</div>
+    <br>
+    <input class = "search" type="text" id="task-name" />
+    <div id="input-handlers">
+        <button class="button" id="submit">Submit</button>
+        <br>
+        <button class="button" id="clear">Clear</button>
+    </div>
+
+    <div id="food_label"></div>
+    <button class="button" id="food">Return All Food</button>
+    <br>
+    <div id="calories_label"></div>
+    <button class="button" id="calories">Calculate Calories</button>
+    <br>
+    <div id="sugar_label"></div>
+    <button class="button" id="sugar">Calculate Sugar</button>
+    <br>
+
+    <a href="test.html">
+        <button>Image Upload Version!</button>
+      </a>
+   <br>
+    <!-- BEGIN PART 2 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <!-- END PART 2 -->
+    <script src="scripts.js"></script>
+    <img src="../../../../cubstart_final/foods-3520938_1280.png" alt="pic" style= "width: 500px; height: 200px;margin-bottom:5px">
+</body>
+
+</html>
