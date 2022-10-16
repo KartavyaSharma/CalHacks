@@ -107,5 +107,5 @@ dist
 .DS_Store
 
 .cache/
-public/
+# public/
 src/gatsby-types.d.ts
