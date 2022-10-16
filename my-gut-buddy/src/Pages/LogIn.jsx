@@ -10,7 +10,7 @@ import PrimaryButton from '../Components/PrimaryButton';
 
 function LogIn() {
     return (
-        <div id='create-account'>
+        <div id='login'>
             <div id='create-account-logo'>
                 <img src={logo} alt='logo' />
             </div>

@@ -5,7 +5,7 @@
     margin-bottom: 25px;
 }
 
-#create-account {
+#create-account, #login {
     margin-top: 80px;
 }
 
@@ -17,4 +17,53 @@
 #login-mascot {
     height: 212px;
     margin-bottom: 20px;
+}
+
+#home-header {
+    width: 100%;
+    margin-top: 0px;
+    height: 108px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
+    position: relative
+}
+
+#home-header h1 {
+    /* Align bottom left of div */
+    position: absolute;
+    bottom: 14px;
+    left: 20px;
+}
+
+#home h2 {
+    text-align: left;
+    margin-left: 30px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#home-meals {
+    width: 100%;
+    overflow: scroll;
+    margin-bottom: 24px;
+}
+
+#home-meals-carousel {
+    /* Display items side by side and scroll horizontally */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* Hide scroll bar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 15px 30px;
+    width: 550px;
+}
+
+#home-meals-carousel .card-container {
+    margin-right: 10px;
+}
+
+#home-meals::-webkit-scrollbar {
+    display: none;
 }

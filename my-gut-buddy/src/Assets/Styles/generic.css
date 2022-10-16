@@ -73,3 +73,30 @@ a {
     display: unset;
     vertical-align: super;
 }
+
+.card-container {
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.small {
+    height: 250px;
+    width: 173px;
+}
+
+.large {
+    height: 200px;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+}
+
+.light {
+    background-color: #A3A0CA;    
+}
+
+.small img {
+    width: 100%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}

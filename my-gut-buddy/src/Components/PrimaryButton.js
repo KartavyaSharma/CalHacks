@@ -3,10 +3,10 @@ import '../Assets/Styles/generic.css';
 
 function PrimaryButton(props) {
     // Get the placeholder text, type (optional) from the props
-    const { text, action } = props;
+    const { text, action, modifier } = props;
 
     return (
-        <button className='primary-button' onClick={() => window.location.href = action}>{text}</button>
+        <button className={'primary-button ' + modifier} onClick={() => window.location.href = action}>{text}</button>
     );
 }
 

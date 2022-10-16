@@ -3,14 +3,17 @@
 import React from 'react';
 import '../Assets/Styles/generic.css';
 
-function TextField(props) {
+function Card(props) {
     // Get the placeholder text, type (optional) from the props
-    const { placeholder, type, name } = props;
+    const { size, children } = props;
 
     return (
         // Input text field with the placeholder text and type (optional)
-        <input type={type} placeholder={placeholder} name={name} autoComplete="new-password" />
+        // Render a card with different sizes
+        <div className={'card-container ' + size}>
+            {children}
+        </div>
     );
 }
 
-export default TextField;
+export default Card;
