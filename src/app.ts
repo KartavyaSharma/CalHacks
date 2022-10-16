@@ -13,6 +13,7 @@ import cors from 'cors';
 import User from './user/user';
 import FoodLogRoutes from './routes/controllers/foodlog';
 import ObservationRoutes from './routes/controllers/observation';
+import DataProcessingRoutes from './routes/controllers/max_food';
 
 export default class App {
 
@@ -45,6 +46,7 @@ export default class App {
         Utils.addRoute(this._server, new AuthRoutes());
         Utils.addRoute(this._server, new FoodLogRoutes(), Auth.authMid, User.setUser);
         Utils.addRoute(this._server, new ObservationRoutes(), Auth.authMid, User.setUser);
+        Utils.addRoute(this._server, new DataProcessingRoutes(), Auth.authMid, User.setUser);
     }
 
     middleware(): void {
