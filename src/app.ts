@@ -12,7 +12,6 @@ import morgan from 'morgan';
 import cors from 'cors';
 import User from './user/user';
 import FoodLogRoutes from './routes/controllers/foodlog';
-import Observation from './controllers/observation';
 import ObservationRoutes from './routes/controllers/observation';
 
 export default class App {

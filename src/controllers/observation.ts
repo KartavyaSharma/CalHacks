@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { IObservation, ObservationModel} from '../models/db/observation/observation';
-
+import FoodLog from './foodlog';
 export default class Observation {
 
     private _id: string;
@@ -44,11 +44,12 @@ export default class Observation {
     }
 
     public async create(): Promise<IObservation> {
+        const mostRecentId: string = await FoodLog.getMostRecentFoodLoId();
         const newObservation: IObservation = {
             _id: nanoid(),
             userId: this._userId,
             timestamp: new Date(),
-            foodLogId: this._foodLogId,
+            foodLogId: mostRecentId,
             intensity: this._intensity,
             symptoms: this._symptoms
         }
@@ -59,5 +60,10 @@ export default class Observation {
     public async getObservation(): Promise<IObservation> {
         const observation: IObservation = await ObservationModel.findOne({ _id: this._id });
         return observation;
+    }
+
+    public static async getAllObservations(): Promise<IObservation[]> {
+        const observations: IObservation[] = await ObservationModel.find({});
+        return observations;
     }
 }
