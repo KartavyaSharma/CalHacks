@@ -14,15 +14,26 @@ export default class SmsRoutes extends Routes {
 
     protected createRoutes(): void {
         this._routes.post('/incoming', async (req: Request, res: Response, next: NextFunction) => {
-            const twiml = new MessagingResponse();
-            const idx = req.body.body.search(/[0-9]+/);
-            if (idx != -1) {
-                const num = req.body.body[idx];
-                if (num >= 7) {
-                    twiml.message("You are doing great! Keep it up!");
-                }
-            }
-            res.type('text/xml').send(twiml.toString());
+            const accountSid = "ACdeebbdeb90d12d983767552b109e21cf";
+            const authToken = "bd740f489e1d63973662e3f2f9a89bfa";
+            const client = require('twilio')(accountSid, authToken);
+
+            client.messages
+                .create({
+                    body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+                    from: '+13608688501',
+                    to: '+13608688501'
+                })
+                .then((message: any) => console.log(message.sid));
+            // const twiml = new MessagingResponse();
+            // const idx = req.body.body.search(/[0-9]+/);
+            // if (idx != -1) {
+            //     const num = req.body.body[idx];
+            //     if (num >= 7) {
+            //         twiml.message("You are doing great! Keep it up!");
+            //     }
+            // }
+            // res.type('text/xml').send(twiml.toString());
         });
 
         this._routes.post('/send', async (req: Request, res: Response, next: NextFunction) => {
