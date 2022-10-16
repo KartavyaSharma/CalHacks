@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "target": "es6",
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "dist",
+      "baseUrl": ".",
+      "experimentalDecorators": true,
+      "paths": {
+        "*": ["node_modules/*"]
+      },
+      "plugins": [
+        {
+          "transform": "./node_modules/typescript-is/lib/transform-inline/transformer",
+          "shortCircuit": true,
+          "ignoreClasses": true,
+          "ignoreMethods": true,
+          "functionBehavior": "ignore",
+          "disallowSuperfluousObjectProperties": true,
+          "transformNonNullExpressions": true,
+          "emitDetailedErrors": "auto"
+        }
+      ]
+    },
+    "include": ["src/**/*", "src/models/**/*"]
+  }
+  
