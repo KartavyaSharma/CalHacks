@@ -10,6 +10,10 @@ import { Auth } from './auth/auth_engine';
 import config from 'config';
 import morgan from 'morgan';
 import cors from 'cors';
+import User from './user/user';
+import FoodLogRoutes from './routes/controllers/foodlog';
+import Observation from './controllers/observation';
+import ObservationRoutes from './routes/controllers/observation';
 
 export default class App {
 
@@ -40,6 +44,8 @@ export default class App {
 
     routes(): void {
         Utils.addRoute(this._server, new AuthRoutes());
+        Utils.addRoute(this._server, new FoodLogRoutes(), Auth.authMid, User.setUser);
+        Utils.addRoute(this._server, new ObservationRoutes(), Auth.authMid, User.setUser);
     }
 
     middleware(): void {
