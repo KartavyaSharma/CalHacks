@@ -30,6 +30,7 @@ export default class App {
     async setup(): Promise<void> {
         dotenv.config();
         await this.setupDb();
+        this._server.use(cors());
         this._server.use(express.json());
         this._server.use(helmet());
         this._server.use(bodyParser.json());
@@ -52,7 +53,7 @@ export default class App {
     middleware(): void {
         /** Standard middleware */
         this._server.use(morgan('combined'));
-        this._server.use(express.urlencoded({ extended: true }));
+        this._server.use(express.urlencoded({ extended: true }))
         this._server.use(Exception.handler);
     }
 
