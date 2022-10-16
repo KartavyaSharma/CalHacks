@@ -30,7 +30,7 @@ function Home() {
         <div id='home'>
 
             <div id='home-header'>
-                <h1>Hey👋, Bobby!</h1>
+                <h1>Hey👋, Jane!</h1>
             </div>
 
             <h2>Goals</h2>
