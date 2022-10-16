@@ -15,13 +15,53 @@ function Home() {
         <div id='home'>
 
             <div id='home-header'>
-                <h1>Welcome Back, Bobby</h1>
+                <h1>Hey👋, Bobby!</h1>
             </div>
 
             <h2>Goals</h2>
             <div id='home-goals'>
                 <Card size='large'>
-                    Meal breakdown, etc
+                <img
+                    alt="stats"
+                    style={{ width: '108px', height: "108px", left: '48px', top: '198px', position: 'absolute'}}
+                    src="https://cdn.discordapp.com/attachments/1025178616952266814/1031128016434233354/Group_6913.png"
+                />
+                <h1 style={{position: 'absolute', width: '179px', height: '18px',left: '183px',top: '196px', fontSize: '14px',lineHeight: "18px"}}>
+                    Meal Breakdown
+                </h1>
+                <img
+                    alt="carbs"
+                    style={{position: 'absolute', width: '55px', height: '55px',left: '184px',top: '211px'}}
+                    src="https://media.discordapp.net/attachments/1025178616952266814/1031129433525977168/Details.png"
+                />
+                <img
+                    alt="fat"
+                    style={{position: 'absolute', width: '55px', height: '55px',left: '184px',top: '238px'}}
+                    src="https://cdn.discordapp.com/attachments/1025178616952266814/1031129450135441500/Details_1.png"
+                />
+                <img
+                    alt="protein"
+                    style={{position: 'absolute', width: '55px', height: '55px',left: '184px',top: '266px'}}
+                    src="https://cdn.discordapp.com/attachments/1025178616952266814/1031129467432730644/Details_2.png"
+                />
+                <h1 style={{position: 'absolute', width: '93px', height: '18px',left: '220px',top: '227px', fontSize: '8px',lineHeight: "18px", textAlign: "left"}}>
+                    Carbohydrates
+                </h1>
+                <h1 style={{position: 'absolute', width: '93px', height: '18px',left: '220px',top: '253px', fontSize: '8px',lineHeight: "18px", textAlign: "left"}}>
+                    Fat
+                </h1>
+                <h1 style={{position: 'absolute', width: '93px', height: '18px',left: '220px',top: '282px', fontSize: '8px',lineHeight: "18px", textAlign: "left"}}>
+                    Protein
+                </h1>
+                <h1 style={{position: 'absolute', width: '93px', height: '18px',left: '320px',top: '227px', fontSize: '8px',lineHeight: "18px", textAlign: "left"}}>
+                    58%
+                </h1>
+                <h1 style={{position: 'absolute', width: '93px', height: '18px',left: '320px',top: '253px', fontSize: '8px',lineHeight: "18px", textAlign: "left"}}>
+                    27%
+                </h1>
+                <h1 style={{position: 'absolute', width: '93px', height: '18px',left: '320px',top: '282px', fontSize: '8px',lineHeight: "18px", textAlign: "left"}}>
+                    15%
+                </h1>
                 </Card>
             </div>
 
