@@ -45,7 +45,7 @@ function Home() {
                 </div>
             </div>
 
-            <PrimaryButton text="Scan Item" action="scan-item" modifier='light' />
+            <PrimaryButton text="Scan Item" action="scan" modifier='light' />
         </div>
     );
 }
