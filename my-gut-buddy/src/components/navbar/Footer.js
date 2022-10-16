@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -8,14 +7,14 @@ function Footer() {
     <div className='connectContainer' id='contact'>
         <div className='footerBar'>
             <div className='footerButtonContainer'>
-                <Link to=''> 
+                <Link to='/home'> 
                     <button><i class="camera"></i></button>
                 </Link>
-                <Link to=''>
-                <button><i class="home"></i></button>
+                <Link to='/home'>
+                    <button><i class="home"></i></button>
                 </Link>
-                <button><i class="personal"></i></button>
-                <Link to=''>
+                    <button><i class="personal"></i></button>
+                <Link to='/home'>
                     <button><i class="settings"></i></button>
                 </Link>
             </div>

@@ -3,7 +3,7 @@ import '../Assets/Styles/onboarding.css';
 
 // Import text field component
 import TextField from '../Components/TextField';
-
+import inputField from '../Components/inputField';
 import axios from 'axios';
 
 import logo from '../Assets/Images/logo-1.png';
@@ -51,8 +51,8 @@ function LogIn() {
                 <p>Please type your information</p>
             </div>
             <div className='input-field'>
-                <TextField name='phone' onChange={handlePhoneChange} value='' placeholder={"(123) 456-7890"} type="phone" />
-                <TextField name='password' onChange={handlePasswordChange} value='' placeholder={"Password"} type="password" />
+                <inputField name='phone' onChange={handlePhoneChange} value='' placeholder={"(123) 456-7890"} type="phone" />
+                <inputField name='password' onChange={handlePasswordChange} value='' placeholder={"Password"} type="password" />
             </div>
 
             <PrimaryButton text
