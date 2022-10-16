@@ -60,7 +60,7 @@ export default class User {
     }
 
     public async createUser(): Promise<{ token: string }> {
-        const userExists: IUser = await UserModel.findOne({ email: this._phone });
+        const userExists: IUser = await UserModel.findOne({ phone: this._phone });
         if (userExists) {
             throw new Exception(ErrorCode.UnknownError, "Duplicate user.");
         }
