@@ -56,7 +56,7 @@ function LogIn() {
             </div>
 
             <PrimaryButton text
-                ="Log In" onClick={handleClick}/>
+                ="Log In" onClick={() => handleClick}/>
 
             {/* Already have an account? */}
             <div className='anchor-bottom'>

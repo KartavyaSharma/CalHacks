@@ -1,13 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Assets/Styles/onboarding.css';
 
 // Import text field component
 import TextField from '../Components/TextField';
+
+import axios from 'axios';
+
 // import logo
 import logo from '../Assets/Images/logo-1.png';
 import PrimaryButton from '../Components/PrimaryButton';
 
 function CreateAccount() {
+    
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+
+    const handlePhoneChange = (e) => {
+        setPhone(e.target.value);
+    }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const handleFirstNameChange = (e) => {
+        setFirstName(e.target.value);
+    }
+
+    async function handleSubmit() {
+        console.log(phone, password, confirmPassword);
+        const response = await axios.post(
+            "http://localhost:3333/auth/create-user",
+            {
+                phone: phone,
+                password: password,
+                firstName: firstName
+            }
+        );
+    }
+
     return (
         <div id='create-account'>
             <div id='create-account-logo'>
