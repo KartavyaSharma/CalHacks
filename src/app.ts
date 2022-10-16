@@ -52,8 +52,7 @@ export default class App {
     middleware(): void {
         /** Standard middleware */
         this._server.use(morgan('combined'));
-        this._server.use(express.urlencoded({ extended: true }))
-        this._server.use(cors());
+        this._server.use(express.urlencoded({ extended: true }));
         this._server.use(Exception.handler);
     }
 
