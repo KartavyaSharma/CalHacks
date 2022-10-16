@@ -14,7 +14,6 @@ export default class SmsRoutes extends Routes {
 
     protected createRoutes(): void {
         this._routes.post('/incoming', async (req: Request, res: Response, next: NextFunction) => {
-            console.log("HELOOOOOOOOOO")
             const twiml = new MessagingResponse();
             const idx = req.body.body.search(/[0-9]+/);
             if (idx != -1) {
@@ -23,6 +22,7 @@ export default class SmsRoutes extends Routes {
                     twiml.message("You are doing great! Keep it up!");
                 }
             }
+            res.type('text/xml').send(twiml.toString());
         });
 
         this._routes.post('/send', async (req: Request, res: Response, next: NextFunction) => {
