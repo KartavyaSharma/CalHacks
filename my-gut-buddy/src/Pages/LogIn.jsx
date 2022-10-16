@@ -27,7 +27,7 @@ function LogIn() {
             </div>
 
             <PrimaryButton text
-                ="Log In" action="#log-in" />
+                ="Log In" action="home" />
 
 
             {/* Already have an account? */}

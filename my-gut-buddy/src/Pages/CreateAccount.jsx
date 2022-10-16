@@ -30,7 +30,7 @@ function CreateAccount() {
             </div>
 
             <PrimaryButton text
-                ="Create Account" action="#create-account" />
+                ="Create Account" action="home" />
 
 
             {/* Already have an account? */}
