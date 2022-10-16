@@ -1,7 +1,7 @@
 from mongoengine import Document, StringField, IntField, ListField, FloatField, DateTimeField
 
 class User(Document):
-    id = IntField
+    id = StringField
     firstname = StringField
     phone = IntField
     password = StringField
@@ -11,17 +11,17 @@ class User(Document):
     age = IntField
 
 class Foodlog(Document):
-    id = IntField
+    id = StringField
     user = StringField
     timestamp = DateTimeField
     meal_type = StringField
 
 
 class Observation(Document):
-    id = IntField
+    id = StringField
     user = StringField
     timestamp = DateTimeField
-    foodlog = ListField
+    foodlog = StringField
     intensity = IntField
     symptoms = ListField
 
