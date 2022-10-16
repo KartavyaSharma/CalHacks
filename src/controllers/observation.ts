@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { IObservation, ObservationModel} from '../models/db/observation/observation';
 
 export default class Observation {
@@ -44,9 +45,9 @@ export default class Observation {
 
     public async create(): Promise<IObservation> {
         const newObservation: IObservation = {
-            _id: this._id,
+            _id: nanoid(),
             userId: this._userId,
-            timestamp: this._timestamp,
+            timestamp: new Date(),
             foodLogId: this._foodLogId,
             intensity: this._intensity,
             symptoms: this._symptoms

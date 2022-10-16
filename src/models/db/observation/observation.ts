@@ -1,10 +1,10 @@
 import { model, Model, Schema } from 'mongoose';
 
 export interface IObservation {
-    _id: string;
+    _id?: string;
     userId: string;
-    timestamp: Date;
-    foodLogId: string;
+    timestamp?: Date;
+    foodLogId?: string;
     intensity: number;
     symptoms: string[];
 }
@@ -20,4 +20,4 @@ const IObservationSchema = new Schema<IObservation>(
     },
     { collection: 'observation', timestamps: true }
 );
-export const ObservationModel: Model<IObservation> = model('foodlog', IObservationSchema);
+export const ObservationModel: Model<IObservation> = model('observations', IObservationSchema);
