@@ -131,3 +131,58 @@ video {
 #success-alert p {
     font-weight: 700;
 }
+
+#video-controls {
+    position: absolute;
+    width: 100vw;
+    height: 168px;
+    border-radius: 32px;
+    bottom: -32px;
+    display: grid;
+    background-color: white;
+}
+
+#take-picture {
+    /* Circle red button */
+    width: 72px;
+    height: 72px;
+    background-color: #FFC0B8;
+    border-radius: 50%;
+    border: 0;
+    margin-top: 30px;
+    position: relative;
+    left: calc(50% - 36px);
+}
+
+#take-picture #inside {
+    width: 40px;
+    height: 40px;
+    background-color: #FF8473;
+    border-radius: 50%;
+    border: 0;
+    margin: 16px
+}
+
+#img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#food {
+    position: absolute;
+    right: 30px;
+    width: 100px;
+    border: 0;
+    background-color: #A3A0CA;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;;
+    /* centered vertically */
+    top: 48px;
+    display: none;
+}
