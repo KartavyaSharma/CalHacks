@@ -29,7 +29,7 @@ function CreateAccount() {
     }
 
     async function handleSubmit() {
-        console.log(phone, password, confirmPassword);
+        // console.log(phone, password, confirmPassword);
         const response = await axios.post(
             "http://localhost:3333/auth/create-user",
             {

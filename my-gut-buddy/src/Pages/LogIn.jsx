@@ -17,6 +17,9 @@ function LogIn() {
         password: ""
     });
 
+    let phone = "";
+    let password = "";  
+
     const [formData, updateFormData] = React.useState(initialFormData);
 
     const handleSubmit = (e) => {
@@ -25,8 +28,12 @@ function LogIn() {
         try {
             const response = axios.post(
                 "http://localhost:3333/auth/login",
-                ...formData
+                {
+                    phone: phone,
+                    password: password
+                },
             );
+            console.log(response);
             localStorage.setItem("token", response.data.payload.token);
         } catch (err) {
             return err.response;
@@ -62,7 +69,9 @@ function LogIn() {
 
             {/* <PrimaryButton text
                 ="Log In" clickFunc={handleSubmit}/> */}
-            <button className='primary-button login' onClick={handleSubmit}>Log In</button>
+            {/* <button className='primary-button login' onClick={handleSubmit}>Log In</button> */}
+            <PrimaryButton text
+                ="Log In" onClick={handleSubmit} f={handleSubmit}/>
 
             {/* Already have an account? */}
             <div className='anchor-bottom'>

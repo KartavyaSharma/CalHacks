@@ -6,11 +6,12 @@ import FuzzySearch from 'react-fuzzy';
 
 function TextField(props) {
 
-    const { placeholder, type, name, autocomplete, data } = props;
+    const { placeholder, type, name, autocomplete, data_input, change } = props;
+    let selectedItem = "";
 
     function getFuzzySearch() {
         if (autocomplete) {
-            const data = require('../Data/titles.json');
+            const data = require('../Data/' + data_input);
             let newData = []
             for (let i = 0; i < data['titles'].length; i++) {
                 newData.push({ title: data['titles'][i] })
@@ -25,8 +26,7 @@ function TextField(props) {
                     maxResults={5}
                     inputWrapperStyle={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#F4F4F4', borderRadius: '5px', border: '1px solid #e0e0e0', height: '50px', width: 'calc(100% - 104px)', padding: '0px', marginLeft: '32px', boxShadow: 'none' }}
                     onSelect={(newSelectedItem) => {
-                        // Local state setter defined elsewhere
-                        // setSelectedItem(newSelectedItem)
+                        change(newSelectedItem);
                     }}
                     resultsTemplate={(props, state, styles, clickHandler) => {
                         return state.results.map((val, i) => {
@@ -49,7 +49,7 @@ function TextField(props) {
         // Input text field with the placeholder text and type (optional)
         <>
             {getFuzzySearch()}
-            {!autocomplete ? <input type={type} placeholder={placeholder} name={name} autoComplete="new-password" /> : null}
+            {!autocomplete ? <input type={type} placeholder={placeholder} name={name} autoComplete="new-password" onChange={change} /> : null}
         </>
     );
 }
