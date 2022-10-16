@@ -49,7 +49,7 @@ export default class App {
         Utils.addRoute(this._server, new FoodLogRoutes(), Auth.authMid, User.setUser);
         Utils.addRoute(this._server, new ObservationRoutes(), Auth.authMid, User.setUser);
         Utils.addRoute(this._server, new DataProcessingRoutes(), Auth.authMid, User.setUser);
-        Utils.addRoute(this._server, new SmsRoutes(), Auth.authMid, User.setUser);
+        Utils.addRoute(this._server, new SmsRoutes());
     }
 
     middleware(): void {
