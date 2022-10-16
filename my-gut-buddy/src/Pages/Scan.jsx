@@ -11,9 +11,9 @@ function Scan() {
     // Parse URL and get ?scantype= parameter
     const urlParams = new URLSearchParams(window.location.search);
     const scanType = urlParams.get('scantype');
-    
+
     let foodItem = "";
-    
+
     return (
         <div id='scan'>
             {/* Render two buttons, one for taking a picture, one for typing in the input */}
@@ -37,7 +37,9 @@ function Scan() {
                 ) : scanType == "picture" ? (
                     <div id='scan-picture'>
                         Picture
-                        <Webcam />
+                        <Webcam mirrored={true} />
+                        <div id=''>
+                        </div>
                     </div>
                 ) : (
                     <div id='scan-item'>
@@ -324,11 +326,11 @@ function Scan() {
                                     "yummy",
                                     "zesty",
                                     "zingy"]
-                                
+
                                 for (let i = 0; i < ingredients.length; i++) {
                                     ingredients[i] = ingredients[i].toLowerCase();
                                     ingredients[i] = ingredients[i].replace(/[0-9]/g, '');
-                                    ingredients[i] = ingredients[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+                                    ingredients[i] = ingredients[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
                                     ingredients[i] = ingredients[i].replace(/cup/g, '');
                                     ingredients[i] = ingredients[i].replace(/cups/g, '');
                                     ingredients[i] = ingredients[i].replace(/tbsp/g, '');
@@ -352,21 +354,36 @@ function Scan() {
                                     ingredients[i] = ingredients[i].replace(/g/g, '');
                                     ingredients[i] = ingredients[i].replace(/gs/g, '');
                                     ingredients[i] = ingredients[i].replace(/gram/g, '');
-                                    
+
                                     for (let j = 0; j < adjectives.length; j++) {
                                         ingredients[i] = ingredients[i].replace(adjectives[j].toLowerCase(), '');
                                     }
+
+                                    // Strip all whitespace and get the first word
+                                    ingredients[i] = ingredients[i].trim().split(' ')[0];
                                 }
                                 console.log("Storing foodlog for item " + ingredients)
                                 // endpoint: /foodlog/create
                                 // parse ingredients as json array
-                                const response = axios.post(
-                                    "http://localhost:3333/foodlog/create",
-                                    {
-                                        mealtype: ingredients
+                                let bearer = localStorage.getItem("token");
+                                console.log(bearer)
+
+                                const config = {
+                                    headers: { Authorization: `Bearer ${bearer}` }
+                                };
+                                console.log(ingredients)
+                                const bodyParameters = {
+                                    foodLog: {
+                                        mealType: ingredients
                                     }
-                                );
-                    
+                                };
+
+                                axios.post(
+                                    'http://localhost:3333/foodlog/create',
+                                    bodyParameters,
+                                    config
+                                ).then(console.log).catch(console.log);
+
                             }
                         } />
                     </div>

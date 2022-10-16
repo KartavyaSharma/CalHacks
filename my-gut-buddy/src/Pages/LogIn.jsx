@@ -22,20 +22,31 @@ function LogIn() {
 
     const [formData, updateFormData] = React.useState(initialFormData);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         // e.preventDefault()
         console.log(formData);
         try {
-            const response = axios.post(
+            const response = await axios.post(
                 "http://localhost:3333/auth/login",
                 {
-                    phone: phone,
-                    password: password
+                    phone: formData['phone'],
+                    password: formData['password']
                 },
             );
             console.log(response);
             localStorage.setItem("token", response.data.payload.token);
+            // Redirect to home page
+            // Check if response is 200
+            // If it is, redirect to home page
+
+            if (response.status === 200) {
+                window.location.href = "/home";
+            } else {
+                alert("Invalid credentials");
+            }
+            
         } catch (err) {
+            alert("Invalid credentials");
             return err.response;
         }
     };
