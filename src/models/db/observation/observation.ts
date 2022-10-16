@@ -20,3 +20,4 @@ const IObservationSchema = new Schema<IObservation>(
     },
     { collection: 'observation', timestamps: true }
 );
+export const ObservationModel: Model<IObservation> = model('foodlog', IObservationSchema);
