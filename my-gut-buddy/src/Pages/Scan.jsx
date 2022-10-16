@@ -11,8 +11,52 @@ function Scan() {
     // Parse URL and get ?scantype= parameter
     const urlParams = new URLSearchParams(window.location.search);
     const scanType = urlParams.get('scantype');
+    const webcamRef = React.useRef(null);
 
     let foodItem = "";
+
+    const capture = React.useCallback(() => {
+        const imageSrc = webcamRef.current.getScreenshot();
+        // console.log(imageSrc);
+        // setImgSrc(imageSrc);
+        return imageSrc;
+    }, [webcamRef]);
+
+    let interval = setInterval(() => {
+        if (document.getElementById("food-item")) {
+            let text = document.getElementById("food-item").innerText
+
+            if (text !== "FOOD ITEM") {
+                foodItem = text;
+                console.log(foodItem);
+                clearInterval(interval);
+
+                let bearer = localStorage.getItem("token");
+                console.log(bearer)
+
+                const config = {
+                    headers: { Authorization: `Bearer ${bearer}` }
+                };
+
+                const bodyParameters = {
+                    foodLog: {
+                        mealType: [foodItem]
+                    }
+                };
+
+                axios.post(
+                    'http://localhost:3333/foodlog/create',
+                    bodyParameters,
+                    config
+                ).then(
+                    // redirect to home with #success
+                    window.location.href = "/home#success"
+                ).catch(console.log);
+            }
+
+        }
+
+    }, 100);
 
     return (
         <div id='scan'>
@@ -37,8 +81,24 @@ function Scan() {
                 ) : scanType == "picture" ? (
                     <div id='scan-picture'>
                         Picture
-                        <Webcam mirrored={true} />
-                        <div id=''>
+                        <img id="img"></img>
+                        <canvas id='mesh'></canvas>
+                        <Webcam mirrored={true} ref={webcamRef} />
+                        <div id='video-controls'>
+                            <div id='take-picture' onClick={
+                                (e) => {
+                                    // e.preventDefault();
+                                    document.getElementById("img").src = capture();
+                                    // get video element on page
+                                    document.getElementsByTagName("video")[0].style.display = "none";
+                                    document.getElementById("food").style.display = "block";
+                                    console.log("Take picture");
+                                }
+                            }>
+                                <div id='inside'></div>
+                            </div>
+                            <p id='food-item' style={{ display: "none" }}>FOOD ITEM</p>
+                            <button id='food'>Submit</button>
                         </div>
                     </div>
                 ) : (
@@ -382,7 +442,10 @@ function Scan() {
                                     'http://localhost:3333/foodlog/create',
                                     bodyParameters,
                                     config
-                                ).then(console.log).catch(console.log);
+                                ).then(
+                                    // Redirect to home
+                                    window.location.href = "/home#success"
+                                ).catch(console.log);
 
                             }
                         } />
