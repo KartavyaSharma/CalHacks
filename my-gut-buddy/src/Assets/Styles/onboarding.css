@@ -67,3 +67,29 @@
 #home-meals::-webkit-scrollbar {
     display: none;
 }
+
+#scan-buttons {
+    margin-top: 40px;
+}
+
+#scan-buttons button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#scan-buttons p {
+    font-weight: 900;
+    font-size: 23px;;
+}
+
+#scan-header {
+    margin-top: 200px;
+}
+
+#scan-item p {
+    margin-bottom: 30px;
+}
+
+#scan-item .primary-button {
+    margin-top: 50px;
+}
