@@ -37,6 +37,7 @@ function Scan() {
                 ) : scanType == "picture" ? (
                     <div id='scan-picture'>
                         Picture
+                        <Webcam />
                     </div>
                 ) : (
                     <div id='scan-item'>

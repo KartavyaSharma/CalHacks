@@ -11,25 +11,26 @@ import logo from '../Assets/Images/logo-1.png';
 import PrimaryButton from '../Components/PrimaryButton';
 
 function CreateAccount() {
+
+
+    let firstName = "";
+    let phone = "";
+    let password = "";
     
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
-    const [firstName, setFirstName] = useState('');
+    // const handlePhoneChange = (e) => {
+    //     setPhone(e.target.value);
+    // }
 
-    const handlePhoneChange = (e) => {
-        setPhone(e.target.value);
-    }
+    // const handlePasswordChange = (e) => {
+    //     setPassword(e.target.value);
+    // }
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    }
-
-    const handleFirstNameChange = (e) => {
-        setFirstName(e.target.value);
-    }
+    // const handleFirstNameChange = (e) => {
+    //     setFirstName(e.target.value);
+    // }
 
     async function handleSubmit() {
-        // console.log(phone, password, confirmPassword);
+        console.log(firstName, phone, password);
         const response = await axios.post(
             "http://localhost:3333/auth/create-user",
             {
@@ -38,6 +39,7 @@ function CreateAccount() {
                 firstName: firstName
             }
         );
+        console.log(response);
     }
 
     return (
@@ -50,9 +52,21 @@ function CreateAccount() {
                 <p>Please type your information</p>
             </div>
             <div className='input-field'>
-                <TextField name='name' value='' placeholder={"Name (or nickname)"} />
-                <TextField name='phone' value='' placeholder={"(123) 456-7890"} type="phone" />
-                <TextField name='password' value='' placeholder={"Password"} type="password" />
+                <TextField name='name' value='' placeholder={"Name (or nickname)"} change={
+                    (e) => {
+                        firstName = e.target.value;
+                    }
+                } />
+                <TextField name='phone' value='' placeholder={"(123) 456-7890"} type="phone" change={
+                    (e) => {
+                        phone = e.target.value;
+                    }
+                } />
+                <TextField name='password' value='' placeholder={"Password"} type="password" change={
+                    (e) => {
+                        password = e.target.value;
+                    }
+                } />
             </div>
 
             {/* Checkbox */}
@@ -62,7 +76,7 @@ function CreateAccount() {
             </div>
 
             <PrimaryButton text
-                ="Create Account" action="home" />
+                ="Create Account" action="home" f={handleSubmit} />
 
 
             {/* Already have an account? */}

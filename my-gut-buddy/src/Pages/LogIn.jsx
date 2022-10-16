@@ -18,7 +18,7 @@ function LogIn() {
     });
 
     let phone = "";
-    let password = "";  
+    let password = "";
 
     const [formData, updateFormData] = React.useState(initialFormData);
 
@@ -38,20 +38,20 @@ function LogIn() {
         } catch (err) {
             return err.response;
         }
-      };
+    };
 
     const handleChange = (e) => {
         updateFormData({
-          ...formData,
-    
-          // Trimming any whitespace
-          [e.target.name]: e.target.value.trim()
+            ...formData,
+
+            // Trimming any whitespace
+            [e.target.name]: e.target.value.trim()
         });
-      };
+    };
 
     return (
         <div
-        id='login'>
+            id='login'>
             <div id='create-account-logo'>
                 <img src={logo} alt='logo' />
             </div>
@@ -71,7 +71,7 @@ function LogIn() {
                 ="Log In" clickFunc={handleSubmit}/> */}
             {/* <button className='primary-button login' onClick={handleSubmit}>Log In</button> */}
             <PrimaryButton text
-                ="Log In" onClick={handleSubmit} f={handleSubmit}/>
+                ="Log In" onClick={handleSubmit} f={handleSubmit} />
 
             {/* Already have an account? */}
             <div className='anchor-bottom'>
